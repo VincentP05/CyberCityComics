@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber City Comics</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway&family=Staatliches&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="wrapper"> 
+        <div class ="header"> 
+            <h1 id ="title">Cyber City Comics</h1>
+        </div>
+        <div class = "nav">
+            <button class="prev" value ="<%=number%>">Prev</button>
+            <button class = "rand">Random</button>
+            <button class ="next" value ="<%=number%>">Next</button>
+        </div>
+    <div id ="comic">
+        <h1><%=title%></h1>
+        <h5><%=month%>/<%=day%>/<%=year%></h5>
+        <img src ="<%=image%>" alt ="<%=alt%>"/>
+        <p id = "num">Comic No. <%=number%></p>
+    </div>
+    
+ <div id="script">   
+</br> 
+  <%let newStart = 0%>
+  <%let newLineCount = 0%>
+  <% for(let i=0;i<transcript.length; i++){ %>
+  <%if (transcript[i]==="@") {%>
+  <%newLineCount +=1 %>
+  <%transcript[i] = " " %>
+  <br/>
+  <%let temp = transcript.slice(newStart, i) %>  
+  <%newStart = i + 1%>
+  <p><%- temp%> </p>
+  <%}%>
+<%}%>
+<%if(newLineCount == 0) {%>
+    <p><%=transcript%></p>
+    <%}%>
+</div>
+    <div class = "nav">
+            <button class="prev" value ="<%=number%>">Prev</button>
+            <button class = "rand">Random</button>
+            <button class ="next" value ="<%=number%>">Next</button>
+        </div>
+        </div>
+        <br/>
+<p id="footer"></p>
+ <script>
+     let d = new Date()
+     let year = d.getFullYear();
+     document.getElementById("footer").innerHTML = `Vincent Phung © ${year}`;
+ </script>
+    
+</div>  
+  <script type="module" src="/index.js"></script>
+</body>
+</html>
