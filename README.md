@@ -10,4 +10,4 @@ A template engine, EJS was used to dynamically render the pages. The backend ser
 ##### Demo @:
 [Click here to demo](https://murmuring-harbor-99581.herokuapp.com/)
 
-Initial start up may take a few seconds, due to my heroku free plan. 
+
